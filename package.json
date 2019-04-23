@@ -4,10 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "client": "cd client && npm start",
+    "client:build": "cd client && npm run build",
+    "server": "nodemon ./index.js",
+    "start:dev": "concurrently \"npm run client\" \"npm run server\"",
+    "start: prod": "NODE_ENV=production node ./index.js",
+    "deploy": "npm run client: build && npm run start:prod",
     "lint": "eslint src",
     "dev": "nodemon --exec 'babel-node src/index'",
     "test": "npm run lint",
-    "start": "nf start"
+    "start": "nf start",
+    "postinstall": "cd client && npm i"
   },
   "keywords": [],
   "author": "",
