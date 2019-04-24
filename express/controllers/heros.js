@@ -1,37 +1,31 @@
-var mongoose = require('mongoose')
-var ObjectId = mongoose.Types.ObjectId
-const { HerosModel } = require('../../mongo/models')
+var mongoose = require("mongoose");
+var ObjectId = mongoose.Types.ObjectId;
+const { HerosModel } = require("../../mongo/models");
 
-// 1. create a function called getAll that returns everything
 const getAll = () => {
-    return HerosModel.find({});
+  return HerosModel.find({});
 };
 
-// 2. create a function called createMovie that accepts a "movie" param
-const createMovie = movie => {
-    return HerosModel.create({
-        movieName: movie.movieName,
-        description: movie.description,
-        price: movie.price
+const createHero = hero => {
+  return HerosModel.create({
+    heroName: hero.heroName,
+    power: hero.power,
+    universe: hero.universe,
+    powerRating: hero.powerRating
+  });
+};
 
-    });
-}
-// 3. create a function called deleteMovie that accepts a "movieName" param
-const deleteMovie = _movieName => {
-    console.log(_movieName);
-    return HerosModel.deleteOne({movieName: _movieName});
-}
+const deleteHero = id => {
+  return HerosModel.deleteOne({ _id: id });
+};
 
-// 4. create a function called getById that accepts an "id" param and finds one ticket
-// hint: in your db query, you will use objectId like this: ObjectId(id)
 const getById = id => {
-    return HerosModel.findById({_id: ObjectId(id)});
-}
-
+  return HerosModel.findOne({ _id: ObjectId(id) });
+};
 
 module.exports = {
-    getAll,
-    createMovie,
-    deleteMovie,
-    getById
-}
+  getAll,
+  createHero,
+  deleteHero,
+  getById
+};
