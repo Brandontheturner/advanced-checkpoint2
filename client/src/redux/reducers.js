@@ -15,4 +15,8 @@ const heros(state = [], action) => {
     default:
       return state;
   }
-}
+};
+
+export default combineReducers({
+  heros
+});
