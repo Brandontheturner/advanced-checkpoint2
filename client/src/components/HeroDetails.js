@@ -1,12 +1,13 @@
 import React, { Component, Fragment } from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const Center = styled.div`
   display: flex;
   justify-content: center;
 `;
 
-class heroDetails extends Component {
+class HeroDetails extends Component {
   state = {
     hero: {}
   };
@@ -39,4 +40,8 @@ class heroDetails extends Component {
   }
 }
 
-export default heroDetails;
+HeroDetails.propTypes = {
+  match: PropTypes.object
+};
+
+export default HeroDetails;

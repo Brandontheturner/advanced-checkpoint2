@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { Button } from "@material-ui/core";
+import PropTypes from "prop-types";
 
 const Wrapper = styled.div`
   padding: 50px;
 `;
 
 const deleteHero = (id, props) => {
-  e.preventDefault();
   fetch(`/api/heros/${id}`, {
     method: "DELETE",
     headers: {
@@ -18,7 +19,7 @@ const deleteHero = (id, props) => {
     .then(result => props.deleteHero(this.state.deleteHero(id)));
 };
 
-const heroList = props => (
+const HeroList = props => (
   <Wrapper>
     <h3>Available Heros</h3>
     {props.heros.map((hero, index) => (
@@ -38,4 +39,8 @@ const heroList = props => (
   </Wrapper>
 );
 
-export default heroList;
+HeroList.propTypes = {
+  heros: PropTypes.array
+};
+
+export default HeroList;

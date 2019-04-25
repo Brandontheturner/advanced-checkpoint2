@@ -4,11 +4,11 @@ import Home from "./containers/Home";
 import HeroDetails from "./components/HeroDetails";
 import NotFound from "./components/NotFound";
 
-const Router = () => {
+const Router = () => (
   <Switch>
     <Route exact path="/" component={Home} />
     <Route path="/heros/:id" component={HeroDetails} />
     <Route component={NotFound} />
-  </Switch>;
-};
+  </Switch>
+);
 export default Router;

@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import HeroList from "../components/HeroList";
+import { deleteHero } from "../redux/actions";
 
 const mapStateToProps = store => {
   return {
@@ -13,4 +14,7 @@ const mapDispatchtoProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps)(HeroList);
+export default connect(
+  mapStateToProps,
+  mapDispatchtoProps
+)(HeroList);

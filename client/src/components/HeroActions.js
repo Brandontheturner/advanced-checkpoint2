@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { TextField, Button } from "@material-ui/core";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const FlexForm = styled.form`
   margin: 50px;
@@ -84,18 +85,13 @@ class HeroActions extends Component {
             Create Super Hero
           </Button>
         </FlexForm>
-        <FlexForm onSubmit={this.deleteHero}>
-          <TextField
-            onChange={this.handleTextChange}
-            id="deleteHeroName"
-            label="Hero Name"
-            value={this.state.deleteHeroName}
-            variant="outlined"
-          />
-        </FlexForm>
       </div>
     );
   }
 }
+
+HeroActions.propTypes = {
+  createHero: PropTypes.func
+};
 
 export default HeroActions;
