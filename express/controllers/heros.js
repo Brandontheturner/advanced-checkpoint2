@@ -7,12 +7,16 @@ const getAll = () => {
 };
 
 const createHero = hero => {
+  console.log("inside of create hero", hero);
+
   return HerosModel.create({
     heroName: hero.heroName,
     power: hero.power,
     universe: hero.universe,
     powerRating: hero.powerRating
-  });
+  })
+    .then(res => console.log("hero result", res))
+    .catch(err => console.log("hero error", err));
 };
 
 const deleteHero = id => {

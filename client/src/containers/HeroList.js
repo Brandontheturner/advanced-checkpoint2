@@ -8,7 +8,7 @@ const mapStateToProps = store => {
   };
 };
 
-const mapDispatchtoProps = dispatch => {
+const mapDispatchToProps = dispatch => {
   return {
     deleteHero: id => dispatch(deleteHero(id))
   };
@@ -16,5 +16,5 @@ const mapDispatchtoProps = dispatch => {
 
 export default connect(
   mapStateToProps,
-  mapDispatchtoProps
+  mapDispatchToProps
 )(HeroList);
