@@ -7,17 +7,7 @@ router.get("/", (request, response) => {
 });
 
 router.post("/", (request, response) => {
-  console.log("Entered");
-
-  HerosController.createHero(request.body)
-    .then(res => {
-      console.log(res);
-
-      response.json(res);
-    })
-    .catch(err => {
-      console.log("error", err);
-    });
+  HerosController.createHero(request.body).then(res => response.json(res));
 });
 
 router.delete("/:id", (request, response) => {

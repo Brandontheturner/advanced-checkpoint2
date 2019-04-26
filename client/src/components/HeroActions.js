@@ -24,6 +24,8 @@ class HeroActions extends Component {
   };
 
   createHero = e => {
+    console.log("hero actions component", this.state);
+
     e.preventDefault();
     fetch("/api/heros", {
       method: "POST",
@@ -46,7 +48,8 @@ class HeroActions extends Component {
           universe: "",
           powerRating: ""
         });
-      });
+      })
+      .catch(err => console.log("actions create hero error", err));
   };
 
   render() {

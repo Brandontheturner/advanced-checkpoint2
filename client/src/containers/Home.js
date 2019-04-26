@@ -4,7 +4,7 @@ import { listHeros } from "../redux/actions";
 
 const mapDispatchToProps = dispatch => {
   return {
-    listHeros: hero => dispatch(listHeros(hero))
+    listHeros: heros => dispatch(listHeros(heros))
   };
 };
 

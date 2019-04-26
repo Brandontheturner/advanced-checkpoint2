@@ -14,10 +14,17 @@ const FlexWrapper = styled.div`
 
 class Home extends Component {
   componentDidMount() {
+    console.log("HomeMounted");
     fetch("/api/heros")
       .then(res => res.json())
-      .then(Heros => this.props.listHeros(Heros))
-      .catch(() => this.props.listHeros([]));
+      .then(heros => {
+        this.props.listHeros(heros);
+        console.log("heros", heros);
+      })
+      .catch(() => {
+        this.props.listHeros([]);
+        console.log("Home didMount");
+      });
   }
 
   render() {
