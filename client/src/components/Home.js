@@ -31,7 +31,7 @@ class Home extends Component {
     return (
       <Fragment>
         <Center>
-          <h1>Super Heros</h1>
+          <h1>Super Hero Registry</h1>
         </Center>
         <Center>
           <FlexWrapper>
