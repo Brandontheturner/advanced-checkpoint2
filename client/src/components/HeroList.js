@@ -21,7 +21,7 @@ const deleteHero = (id, props) => {
 
 const HeroList = props => (
   <Wrapper>
-    <h3>Available Heros</h3>
+    <h3>Current Heroes</h3>
     {props.heros.map((hero, index) => (
       <p key={index}>
         {hero.heroName} &nbsp;
