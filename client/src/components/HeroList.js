@@ -16,7 +16,7 @@ const deleteHero = (id, props) => {
     }
   })
     .then(res => res.json())
-    .then(result => props.deleteHero(this.state.deleteHero(id)));
+    .then(result => props.deleteHero(id));
 };
 
 const HeroList = props => (
